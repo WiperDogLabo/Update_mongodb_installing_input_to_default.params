@@ -21,7 +21,7 @@ fi
 echo "** Install wiperdog..."
 expect<<DONE
 	#set wdInstaller [lindex $argv 0]
-	spawn sudo java -jar $wdInstaller -d $wdDir 
+	spawn java -jar $wdInstaller -d $wdDir 
 	expect "Getting input parameters for pre-configured*"
 	send "\r"
 	sleep 1
