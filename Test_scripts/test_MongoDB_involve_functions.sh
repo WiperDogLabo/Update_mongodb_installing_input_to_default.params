@@ -185,11 +185,11 @@ if [ -d $wdDir ];then
     $wdDir/bin/startWiperdog.sh > wd_stdout.log 2>&1 &
     sleep 60
     mongoMessage=$( cat wd_stdout.log | grep "Done send data to mongo DB" )
-	if [[ $mongoMessage =~ .*'Done send data to mongo DB at 10.0.0.154'.* ]] ;then
-		echo "** Data sent to MongoDB at 10.0.1.154 : PASSED"
+	if [[ $mongoMessage =~ .*${mongoDBHost}.* ]] ;then
+		echo "** Data sent to MongoDB at ${mongoDBHost} : PASSED"
 		echo "=========== CASE 2 : PASSED"
 	else
-		echo "** Failure to sent data to MongoDB at 10.0.1.154 : FAILED"
+		echo "** Failure to sent data to MongoDB at ${mongoDBHost} : FAILED"
 		echo "=========== Case 2: FAILED"
 		exit
 	fi

@@ -103,7 +103,7 @@ fi
 
 sleep 10
 
-echo "Case 1: Verified Restful server start on default port"
+echo "Case 2: Verified Restful server start on user specific port"
 echo "** Clean data..."
 sudo rm -rf $wdDir
 if [ -d $wdDir ]; then
